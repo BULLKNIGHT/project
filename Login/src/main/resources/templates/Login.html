@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <title>Login</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+	<form th:action ="@{/check}" method="get">
+	<p class="h1">Login</p>
+	
+  <div class="form-group">
+    <label>User Name</label>
+    <input type="text" class="form-control" aria-describedby="emailHelp" name="userName">  
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" name="password">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<form action="register">
+	<p class="h1">Register here</p>
+	<button type="submit" class="btn btn-primary">Register</button>
+</form>
+</body>
+</html>

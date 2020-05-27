@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Register</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+	<form th:action="@{/addUser}" th:object="${user}" method="post">
+		<div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="username">User Name</label>
+      <input type="text" id="username" class="form-control" name="userName">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="password">Password</label>
+      <input type="password" id="password" class="form-control" name="password">
+    </div>
+    </div>
+    
+      <div class="form-group">
+    <label for="firstname">First Name</label>
+    <input type="text" id="firstname" class="form-control" placeholder="first name" name="firstName">
+  </div>
+  <div class="form-group">
+    <label for="lastname">Last Name</label>
+    <input type="text" class="form-control" id="lastname" placeholder="last name" name="lastName">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" placeholder="email" name="email">
+  </div>
+    <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="phoneno">Phone No</label>
+      <input type="text" class="form-control" id="phoneno" name="phoneNo">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="gender">Gender</label>
+      <input type="text" class="form-control" id="gender" name="gender">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="country">Country</label>
+      <input type="text" class="form-control" id="country" name="country">
+    </div>
+  </div>
+ 
+    <button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</body>
+</html>
