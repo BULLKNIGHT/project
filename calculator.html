@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.container {
+				width: 70%;
+				margin: auto;
+			}
+
+			.header {
+				width: 100%;
+				text-align: center;
+				font-size: 22px;
+				font-weight: 700;
+				font-family: "Arial";
+			}
+			.display {
+				height: 50px;
+				width: 240px;
+				background-color: lightblue;
+				border: 4px solid black;
+				margin: 2px;
+
+				font-size: 25px;
+				font-family: "Arial";
+				text-align: center;
+			}
+			#board {
+				width: 80%;
+				margin: auto;
+				padding: 20px;
+			}
+
+			.grid-row {
+				display: flex;
+				justify-content: center;
+			}
+
+			.grid-item {
+				height: 50px;
+				width: 50px;
+				background-color: lightblue;
+				border: 4px solid black;
+				margin: 2px;
+
+				font-size: 20px;
+				font-family: "Arial";
+				text-align: center;
+			}
+
+			.turn {
+				width: 100%;
+				text-align: center;
+				font-style: italic;
+			}
+		</style>
+
+		<script>
+			let expr = "";
+
+			function initialize() {
+				console.log("initialize");
+				expr = "";
+				const input = document.getElementById("input");
+				console.log(input.innerText, "inner");
+				input.innerText = "";
+			}
+
+			function getNum(id) {
+				let input = document.getElementById("input");
+				console.log(document.getElementById(id).innerText);
+				expr = expr + document.getElementById(id).innerText;
+
+				input.innerText =
+					input.innerText + document.getElementById(id).innerText;
+			}
+
+			function getOperator(id) {
+				let input = document.getElementById("input");
+				console.log(id);
+				expr = expr + document.getElementById(id).innerText;
+				input.innerText =
+					input.innerText + document.getElementById(id).innerText;
+			}
+
+			function answer() {
+				console.log(expr);
+				let value = eval(expr);
+				const input = document.getElementById("input");
+				input.innerText = value;
+			}
+			initialize();
+		</script>
+	</head>
+	<body onload="initialize()">
+		<div class="container">
+			<div class="header">Calculator</div>
+			<div class="board">
+				<div class="grid-row">
+					<div class="display" onclick="" id="input"></div>
+				</div>
+				<div class="grid-row">
+					<div class="grid-item" onclick="getOperator(this.id)" id="plus">
+						+
+					</div>
+					<div class="grid-item" onclick="getOperator(this.id)" id="minus">
+						-
+					</div>
+					<div class="grid-item" onclick="getOperator(this.id)" id="multiply">
+						*
+					</div>
+					<div class="grid-item" onclick="getOperator(this.id)" id="divide">
+						/
+					</div>
+				</div>
+				<div class="grid-row">
+					<div class="grid-item" onclick="getNum(this.id)" id="block0">0</div>
+					<div class="grid-item" onclick="getNum(this.id)" id="block1">1</div>
+					<div class="grid-item" onclick="getNum(this.id)" id="block2">2</div>
+					<div class="grid-item" onclick="getNum(this.id)" id="block3">3</div>
+				</div>
+				<div class="grid-row">
+					<div class="grid-item" onclick="getNum(this.id)" id="block4">4</div>
+					<div class="grid-item" onclick="getNum(this.id)" id="block5">5</div>
+					<div class="grid-item" onclick="getNum(this.id)" id="block6">6</div>
+					<div class="grid-item" onclick="getNum(this.id)" id="block7">7</div>
+				</div>
+				<div class="grid-row">
+					<div class="grid-item" onclick="getNum(this.id)" id="block8">8</div>
+					<div class="grid-item" onclick="getNum(this.id)" id="block9">9</div>
+					<div class="grid-item" onclick="getNum(this.id)" id="dot">.</div>
+					<div class="grid-item" onclick="initialize()" id="clr">Clear</div>
+				</div>
+				<div class="grid-row">
+					<div class="display" onclick="answer()" id="ans">Answer</div>
+				</div>
+			</div>
+			<div class="turn"></div>
+		</div>
+	</body>
+</html>
